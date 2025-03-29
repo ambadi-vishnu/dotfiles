@@ -19,8 +19,3 @@ echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Font Cache Updated" >> ~/insta
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Activating Bluetooth Service..." >> ~/install-log.txt
 sudo systemctl enable bluetooth.service || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Enabling bluetooth.service" >> ~/install-log.txt; exit 1; }
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Success:  Bluetooth Service Activated" >> ~/install-log.txt
-
-#Generate KDE Menu
-echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Generating KDE Menu..." >> ~/install-log.txt
-XDG_MENU_PREFIX=arch- kbuildsycoca6 || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Generating KDE Menu" >> ~/install-log.txt; exit 1; }
-echo "$(date '+%A %d %B %Y | %I:%M %p'): Success:  KDE Menu Generated" >> ~/install-log.txt
