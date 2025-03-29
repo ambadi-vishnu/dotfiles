@@ -1,0 +1,235 @@
+@import "colors.rasi"
+
+/* Global Styles */
+* {
+    border-color:                var(selected);
+    background-color:            var(background-transparent);
+    foreground-color:            var(foreground);
+    alternate-background:        var(selected);
+    alternate-foreground:        var(background);
+    font:                        "FiraCode Nerd Font Propo 12";
+}
+
+/* Main Config - emoji */
+configuration {
+    show-icons:                 true;
+    display-drun:               "";
+    drun-display-format:        "{icon} {name}";
+    disable-history:            false;
+    click-to-exit:              true;
+    location:                   0;
+    hover-select:               true;
+    me-select-entry:            "MouseSecondary";
+    me-accept-entry:            "MousePrimary";
+}
+
+/* ---- Window ---- */
+window {
+    transparency:               "real";
+    location:                   center;
+    fullscreen:                 true;
+    width:                      1366px;
+    height:                     768px;
+    x-offset:                   0px;
+    y-offset:                   0px;
+    enabled:                    true;
+    margin:                     0px;
+    padding:                    0px;
+    border:                     0px solid;
+    border-radius:              0px;
+    border-color:               #0c0c0cBB;
+    cursor:                     "default";
+    background-color:           #0c0c0cBB;
+}
+
+prompt {
+    enabled:                    true;
+    background-color:           #0c0c0cBB;
+    text-color:                 #FFFFFFFF;
+}
+
+textbox-prompt-colon {
+    expand:                     false;
+    str:                        "";
+    border-radius:              10%;
+    background-color:           #0c0c0cBB;
+    text-color:                 #FFFFFFFF;
+    padding:                    8px 12px;
+}
+
+entry {
+    background-color:           #0c0c0cBB;
+    text-color:                 #FFFFFFFF;
+    expand:                     true;
+    horizontal-align:           0;
+    blink:                      true;
+    border:                     0px 0px 2px 0px;
+    padding:                    8px;
+}
+
+inputbar {
+    children:                   [ textbox-prompt-colon, entry ];
+    background-color:           #0c0c0cBB;
+    text-color:                 #FFFFFFFF;
+    expand:                     false;
+    border:                     0px 0px 0px 0px;
+    border-radius:              0px;
+    margin:                     0px 0px 0px 0px;
+    padding:                    0px;
+    position:                   center;
+}
+
+case-indicator {
+    background-color:           #0c0c0cBB;
+    text-color:                 #FFFFFFFF;
+    spacing:                    0;
+}
+
+listview {
+    background-color:           #0c0c0cBB;
+    text-color:                 #FFFFFFFF;
+    columns:                    1;
+    lines:                      7;
+    spacing:                    4px;
+    cycle:                      false;
+    dynamic:                    true;
+    layout:                     vertical;
+}
+
+/* ---- Scrollbar ---- */
+scrollbar {
+    border:                     0px;
+    border-radius:              10px;
+    background-color:           transparent;
+    handle-color:               #FFFFFF;
+    handle-width:               2px;
+    padding:                    0;
+}
+
+mainbox {
+    background-color:           transparent;
+    children:                   [ inputbar, message, listview ];
+    spacing:                    15px;
+    padding:                    15px;
+}
+
+element {
+    background-color:           transparent;
+    text-color:                 #FFFFFFFF;
+    orientation:                horizontal;
+    border-radius:              4px;
+    padding:                    12px;
+}
+
+element-icon {
+    background-color:           inherit;
+    text-color:                 inherit;
+    horizontal-align:           0.5;
+    vertical-align:             0.5;
+    size:                       24px;
+    border:                     0px;
+}
+
+element-text {
+    background-color:           inherit;
+    text-color:                 inherit;
+    expand:                     true;
+    horizontal-align:           0;
+    vertical-align:             0.5;
+    margin:                     2px 0px 2px 2px;
+}
+
+element.normal.urgent,
+element.alternate.urgent {
+    background-color:           #0c0c0cBB;
+    text-color:                 #FFFFFFFF;
+    border-radius:              9px;
+}
+
+element.normal.active,
+element.alternate.active {
+    background-color:           #0c0c0cBB;
+    text-color:                 #FFFFFFFF;
+}
+
+element-text.selected,
+element.selected {
+    background-color:           #FFFFFFFF;
+    text-color:                 #0c0c0cBB;
+    border:                     0px 0px 0px 0px;
+    border-radius:              10px;
+    border-color:               #0c0c0cBB;
+}
+
+element.selected.urgent {
+    background-color:           #FFFFFFFF;
+    text-color:                 #0c0c0cBB;
+}
+
+element.selected.active {
+    background-color:           #FFFFFFFF;
+    color:                      #0c0c0cBB;
+}
+
+/*****----- Message -----*****/
+message {
+    background-color:           transparent;
+    border:                     0px;
+}
+
+error-message {
+    padding:                    20px;
+}
+
+textbox {
+    padding:                    10px;
+    border-radius:              10px;
+    background-color:           #0c0c0cBB;
+    text-color:                 #FFFFFFFF;
+    vertical-align:             0.5;
+    horizontal-align:           0.5;
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+    children:                   [ "inputbar", "message", "listview" ];
+}
+
+/* ---- Window ---- */
+window {
+    width:                      inherit;
+    height:                     inherit;
+}
+
+/* ---- Entry ---- */
+entry {
+    width:                      37%;
+    placeholder:                "Search / Choose Emoji";
+    horizontal-align:           0.0;
+}
+
+/* ---- Listview ---- */
+listview {
+    columns:                    3;
+    lines:                      10;
+    fixed-height:               false;
+    scrollbar:                  true;
+    spacing:                    6px;
+    cycle:                      true;
+}
+
+/* ---- Elements ---- */
+element {
+    orientation:                horizontal;
+}
+
+element-icon {
+    size:                       0%;
+}
+
+element-text {
+    horizontal-align:           0.0;
+    vertical-align:             0.5;
+    padding:                    0px;
+    margin:                     0px;
+}

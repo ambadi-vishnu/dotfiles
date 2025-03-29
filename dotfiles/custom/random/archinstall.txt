@@ -1,0 +1,50 @@
+#Install-ArchLinux
+iwctl
+device list
+station wlan0 get-networks
+station wlan0 connect GNXS-3C04B8
+"password"
+exit
+
+ping archlinux.org
+
+lsblk
+cfdisk /dev/nvme0n1
+Free Space - Create : 1G, -Type : EFI System
+Free Space - Create : 99G, -Type : Linux FileSystem
+Write Quit
+
+mkfs.fat -F32 /dev/nvme0n1p1
+mkfs.ext4 /dev/nvme0n1p2 (Proceed: Y)
+
+mount /dev/nvme0n1p2 /mnt
+mkdir /mnt/boot
+mount /dev/nvme0n1p1 /mnt/boot
+
+archinstall
+Pre-Mounted Configuration - /mnt
+Additional Packages - git nano
+
+/etc/pacman.conf
+Color
+ILoveCandy
+VerbosePkgLists
+ParallelDownloads = 5
+
+#Connect WiFi
+nmcli device wifi connect GNXS-3C04B8 password "xxxxx"
+
+#Install Plymouth Theme / OS Prober
+yay -S plymouth-git
+yay -S plymouth-theme-optimus-git
+sudo pacman -S --needed os-prober
+sudo nano /etc/mkinitcpio.conf
+HOOKS=(base udev autodetect microcode modconf kms keyboard keymap consolefont block plymouth filesystems fsck)
+sudo nano /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet splash"
+GRUB_DISABLE_OS_PROBER=false
+plymouth-set-default-theme -l 
+sudo plymouth-set-default-theme optimus
+plymouth-set-default-theme
+sudo mkinitcpio -p linux
+sudo grub-mkconfig -o /boot/grub/grub.cfg

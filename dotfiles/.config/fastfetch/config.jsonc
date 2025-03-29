@@ -1,0 +1,115 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty-direct",
+    "source": "~/.config/fastfetch/arch.png",
+    "padding": {
+      "right": 10,
+      "top": 6
+    }
+  },
+  "general": {
+    "multithreading": true
+  },
+  "display": {
+    "separator": "➜   "
+  },
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "format": "                                {6}{7}{8}"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "┌──────────────────────────────────────────────────────────────────────────────┐" // `\u001b` is `\033`, or `\e`
+    },
+    "break",
+    {
+      "key": "     OS           ",
+      "keyColor": "green",
+      "type": "os"
+    },
+    {
+      "key": "     Kernel       ",
+      "keyColor": "cyan",
+      "type": "kernel"
+    },
+    {
+      "key": "     Packages     ",
+      "keyColor": "blue",
+      "type": "packages"
+    },
+    {
+      "key": "    󰌢 Machine      ",
+      "keyColor": "green",
+      "type": "host"
+    },
+    {
+      "key": "    󰻠 CPU          ",
+      "keyColor": "cyan",
+      "type": "cpu"
+    },
+    {
+      "key": "    󰍛 GPU          ",
+      "keyColor": "blue",
+      "type": "gpu"
+    },
+    {
+      "key": "    󰑭 Memory       ",
+      "keyColor": "green",
+      "type": "memory"
+    },
+    {
+      "key": "     Disk         ",
+      "keyColor": "cyan",
+      "type": "disk"
+    },
+    {
+      "key": "     Swap         ",
+      "keyColor": "blue",
+      "type": "swap"
+    },
+    {
+      "key": "     Display      ",
+      "keyColor": "green",
+      "type": "display"
+    },
+    {
+      "key": "     WM           ",
+      "keyColor": "cyan",
+      "type": "wm"
+    },   
+    {
+      "key": "     WiFi         ",
+      "keyColor": "blue",
+      "type": "wifi"
+    },
+    {
+      "key": "     Battery      ",
+      "keyColor": "green",
+      "type": "battery",
+      "compact": true
+    },
+    {
+      "key": "    󰅐 Uptime       ",
+      "keyColor": "cyan",
+      "type": "uptime"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "└──────────────────────────────────────────────────────────────────────────────┘" // `\u001b` is `\033`, or `\e`
+    },
+    "break",
+    {
+      "type": "colors",
+      "paddingLeft": 34,
+      "symbol": "circle",
+      "block": {
+        "width": 10
+      }
+    }
+  ]
+}

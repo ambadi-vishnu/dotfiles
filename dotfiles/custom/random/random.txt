@@ -1,0 +1,32 @@
+Firefox
+
+about:config
+
+    privacy.resistFingerprinting = false
+    privacy.fingerprintingProtection = true
+    privacy.fingerprintingProtection.overrides = +AllTargets,-CSSPrefersColorScheme
+
+Thunar
+
+kitty --directory %f
+
+Module Missing
+
+yay -S mkinitcpio-firmware
+ls -ll/usr/share/kbd/consolefonts/
+sudo nano /etc/vconsole.conf
+FONT=lat9w-16
+
+Plymouth
+
+yay -S plymouth
+sudo nano /etc/mkinitcpio.conf
+HOOKS=(base udev plymouth autodetect modconf block filesystems keyboard fsck)
+sudo mkinitcpio -P
+sudo nano /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo plymouth-set-default-theme --list
+sudo plymouth-set-default-theme -R details
+
+
