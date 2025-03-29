@@ -1,0 +1,298 @@
+/* Dracula Theme */
+@define-color foreground rgb(248, 248, 242);
+@define-color background rgb(40, 42, 54);
+@define-color background-alpha rgba(40, 42, 54, 0.8);
+@define-color accent rgba(189, 147, 249, 0.8);
+@define-color current-line rgb(68, 71, 90);
+@define-color comment rgb(98, 114, 164);
+
+* {
+    font-family: FiraCode Nerd Font Propo;
+    font-weight: normal;
+}
+
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+    background: rgba(189, 147, 249, 0.43); /* Accent color with reduced opacity */
+}
+
+.notification-row {
+    outline: none;
+    margin: 10px;
+    padding: 0;
+}
+
+.notification {
+    background: transparent;
+    padding: 0;
+    margin: 0px;
+}
+
+.notification-content {
+    background: rgb(40, 42, 54); /* Background color */
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid rgba(189, 147, 249, 0.8); /* Accent color */
+    margin: 0;
+}
+
+.notification-default-action {
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.close-button {
+    background: rgb(68, 71, 90); /* Current line color */
+    color: rgb(248, 248, 242); /* Foreground color */
+    text-shadow: none;
+    padding: 0;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.close-button:hover {
+    box-shadow: none;
+    background: rgb(98, 114, 164); /* Comment color */
+    transition: all 0.15s ease-in-out;
+    border: none;
+}
+
+.notification-action {
+    border: 2px solid rgba(189, 147, 249, 0.8); /* Accent color */
+    border-top: none;
+    border-radius: 5px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+    color: rgba(189, 147, 249, 0.8); /* Accent color */
+    background: rgba(189, 147, 249, 0.8); /* Accent color */
+}
+
+.inline-reply-entry {
+    background: rgb(40, 42, 54); /* Background color */
+    color: rgb(248, 248, 242); /* Foreground color */
+    caret-color: rgb(248, 248, 242); /* Foreground color */
+    border: 1px solid rgb(98, 114, 164); /* Comment color */
+    border-radius: 5px;
+}
+
+.inline-reply-button {
+    margin-left: 4px;
+    background: rgb(40, 42, 54); /* Background color */
+    border: 1px solid rgb(98, 114, 164); /* Comment color */
+    border-radius: 5px;
+    color: rgb(248, 248, 242); /* Foreground color */
+}
+
+.inline-reply-button:disabled {
+    background: initial;
+    color: rgb(65, 72, 104); /* Adjusted color */
+    border: 1px solid transparent;
+}
+
+.inline-reply-button:hover {
+    background: rgb(40, 42, 54); /* Background color */
+}
+
+.body-image {
+    margin-top: 6px;
+    background-color: rgb(248, 248, 242); /* Foreground color */
+    border-radius: 5px;
+}
+
+.summary {
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+    color: rgba(158, 206, 106, 1); /* A green color */
+    text-shadow: none;
+}
+
+.time {
+    font-size: 16px;
+    font-weight: 700;
+    background: transparent;
+    color: rgb(248, 248, 242); /* Foreground color */
+    text-shadow: none;
+    margin-right: 18px;
+}
+
+.body {
+    font-size: 15px;
+    font-weight: 400;
+    background: transparent;
+    color: rgb(248, 248, 242); /* Foreground color */
+    text-shadow: none;
+}
+
+.control-center {
+    background: rgba(40, 42, 54, 0.8); /* Background alpha */
+    border: 2px solid rgb(52, 84, 138); /* A blue color */
+    border-radius: 5px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list-placeholder {
+    opacity: .5;
+}
+
+.floating-notifications {
+    background: transparent;
+}
+
+.blank-window {
+    background: rgba(0, 0, 0, 0.1); /* Slightly transparent black */
+}
+
+.widget-title {
+    color: rgba(189, 147, 249, 0.8); /* Accent color */
+    background: rgb(40, 42, 54); /* Background color */
+    padding: 5px 10px;
+    margin: 10px 10px 5px 10px;
+    font-size: large;
+    border-radius: 5px;
+}
+
+.widget-title>button {
+    font-size: 1rem;
+    color: rgb(248, 248, 242); /* Foreground color */
+    text-shadow: none;
+    background: rgb(40, 42, 54); /* Background color */
+    box-shadow: none;
+    border-radius: 5px;
+}
+
+.widget-title>button:hover {
+    background: rgb(247, 118, 142); /* A pinkish color */
+    color: rgb(40, 42, 54); /* Background color */
+}
+
+.widget-dnd {
+    background: rgb(40, 42, 54); /* Background color */
+    padding: 5px 10px;
+    margin: 10px 10px 5px 10px;
+    border-radius: 5px;
+    font-size: large;
+    color: rgba(189, 147, 249, 0.8); /* Accent color */
+}
+
+.widget-dnd>switch {
+    border-radius: 5px;
+    background: rgba(189, 147, 249, 0.8); /* Accent color */
+}
+
+.widget-dnd>switch:checked {
+    background: rgb(247, 118, 142); /* A pinkish color */
+    border: 1px solid rgb(247, 118, 142); /* Same pinkish color */
+}
+
+.widget-dnd>switch slider {
+    background: rgb(40, 42, 54); /* Background color */
+    border-radius: 5px;
+}
+
+.widget-dnd>switch:checked slider {
+    background: rgb(40, 42, 54); /* Background color */
+    border-radius: 5px;
+}
+
+.widget-label {
+    color: rgba(189, 147, 249, 0.8); /* Accent color */
+    background: rgb(40, 42, 54); /* Background color */
+    padding: 5px 10px;
+    margin: 10px 10px 5px 10px;
+    font-size: large;
+    border-radius: 5px;
+}
+
+.widget-mpris {
+    color: rgb(248, 248, 242); /* Foreground color */
+    background: rgb(40, 42, 54); /* Background color */
+    padding: 5px 10px;
+    margin: 10px 10px 5px 10px;
+    border-radius: 5px;
+}
+
+.widget-mpris>box>button {
+    border-radius: 5px;
+}
+
+.widget-mpris-player {
+    padding: 5px 10px;
+    margin: 10px;
+}
+
+.widget-mpris-title {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.widget-mpris-subtitle {
+    font-size: 1rem;
+}
+
+.widget-buttons-grid {
+    font-size: large;
+    padding: 5px;
+    margin: 10px 10px 5px 10px;
+    border-radius: 5px;
+    background: rgb(21, 22, 30); /* A very dark color */
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    margin: 3px;
+    background: rgb(40, 42, 54); /* Background color */
+    border-radius: 5px;
+    color: rgb(248, 248, 242); /* Foreground color */
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    background: rgba(122, 162, 247, 1); /* A bluish color */
+    color: rgb(40, 42, 54); /* Background color */
+}
+
+.widget-menubar>box>.menu-button-bar>button {
+    border: none;
+    background: transparent;
+}
+
+.topbar-buttons>button {
+    border: none;
+    background: transparent;
+}
+
+.widget-volume {
+    background: rgb(21, 22, 30); /* A very dark color */
+    padding: 5px;
+    margin: 10px 10px 5px 10px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: rgb(248, 248, 242); /* Foreground color */
+}
+
+.widget-volume>box>button {
+    background: rgba(189, 147, 249, 0.8); /* Accent color */
+    border: none;
+}
+
+.per-app-volume {
+    background-color: rgb(40, 42, 54); /* Background color */
+    padding: 4px 8px 8px;
+    margin: 0 8px 8px;
+    border-radius: 5px;
+}
+
+.widget-backlight {
+    background: rgb(21, 22, 30); /* A very dark color */
+    padding: 5px;
+    margin: 10px 10px 5px 10px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: rgb(248, 248, 242); /* Foreground color */
+}

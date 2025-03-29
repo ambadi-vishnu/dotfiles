@@ -1,0 +1,12 @@
+[General]
+TerminalApplication=kitty
+
+[Icons]
+Theme=Tela-circle-dracula-dark
+
+[KDE]
+widgetStyle=qt6ct-style
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0

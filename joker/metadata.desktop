@@ -1,0 +1,14 @@
+[SddmGreeterTheme]
+Name=joker
+Description=Joker SDDM Theme
+Author=Vishnu
+Website=https://github.com/mady-codes
+License=GPL-3.0-or-later
+Type=sddm-theme
+Version=0.1
+ConfigFile=joker.conf
+MainScript=Main.qml
+TranslationsDirectory=translations
+Theme-Id=joker
+Theme-API=2.0
+QtVersion=6
