@@ -18,8 +18,9 @@ open() {
 xdg-open "$(find -type f | fzf)"
 }
 
-alias getpath="find -type f | fzf | sed 's/^..//' | tr -d '\n' | copyq add -"
-
+getpath() {
+copyq add "$(find -type f | fzf | sed 's/^..//' | tr -d '\n')"
+}
 
 PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[1;32m%}%n%{\e[1;37m%}@%{\e[1;37m%}%{\e[1;31m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;38;5;214m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[38;5;214m%}'%D{"%a %b %d, %I:%M %p"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}
 %{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B]%{\e[0m%} '
