@@ -133,6 +133,14 @@ tooltip label {
     font-weight: bold;
 }
 
+#power-profiles-daemon {
+    color: #c9c7cd;
+    margin: 6px;
+    padding: 0 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
 #battery {
     color: #90B99F;
     outline-style: none;
