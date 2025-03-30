@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Get the current power profile
+current_profile=$(powerprofilesctl get)
+
+# Switch to the next profile
+case "$current_profile" in
+  performance)
+    powerprofilesctl set balanced
+        notify-send -t 3000 "Power Profile" "Balanced Mode ON"
+    ;;
+  balanced)
+    powerprofilesctl set power-saver
+        notify-send -t 3000 "Power Profile" "Power Saver Mode ON"
+    ;;
+  power-saver)
+    powerprofilesctl set performance
+        notify-send -t 3000 "Power Profile" "Performance Mode ON"
+    ;;
+  *)
+        notify-send -t 3000 "Power Profile" "Unknown Error"
+    ;;
+esac
