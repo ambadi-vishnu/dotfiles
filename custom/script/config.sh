@@ -21,6 +21,11 @@ echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Copying Resources Folder To Hom
 cp -rf ~/temp/dotfiles/resources "$HOME/" || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Copying Resources Folder To Home Directory" >> ~/install-log.txt; exit 1; }
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Resources Folder Copied To Home Directory" >> ~/install-log.txt
 
+#Script Permission Update
+echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Updating Script Permissions..." >> ~/install-log.txt
+chmod +x ~/resources/scripts/* || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Updating Script Permissions" >> ~/install-log.txt; exit 1; }
+echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Script Permissions Updated" >> ~/install-log.txt
+
 #Copy ZSH Essentials To Home Directory
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Copying Zsh Essentials To Home Directory..." >> ~/install-log.txt
 cp -rf ~/temp/dotfiles/zsh/.zshrc "$HOME/" || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Copying .zshrc To Home Directory" >> ~/install-log.txt; exit 1; }
