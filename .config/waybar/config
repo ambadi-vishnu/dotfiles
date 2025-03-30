@@ -12,7 +12,8 @@
     "disk",
     "cpu",
     "temperature",
-    "memory"
+    "memory",
+    "power-profiles-daemon",
   ],
   "modules-center": [
     "hyprland/workspaces"
@@ -50,11 +51,6 @@
       "": 
         "<span size='large' foreground='#89b4fa'> </span> Hyprland",
 
-      // Terminal
-      "/.*": "  Terminal",
-      "~.*": "  Terminal",
-      "zsh": "  Terminal",
-      "kitty": "  Terminal",
 
       "tmux(.*)": 
         "<span size='large' foreground='#a6e3a1'> </span> Tmux",
@@ -65,6 +61,13 @@
         "<span size='large' foreground='#f38ba8'>󰈹 </span> LibreWolf",
       "(.*) — LibreWolf": 
         "<span size='large' foreground='#f38ba8'>󰈹 </span> LibreWolf",
+
+      // Terminal
+      "/.*": "  Terminal",
+      "~.*": "  Terminal",
+      "zsh": "  Terminal",
+      "kitty": "  Terminal",
+
 
       // File Manager
 
@@ -118,7 +121,15 @@
       "Authenticate": "  Authenticate"
     }
   },
-
+"power-profiles-daemon": {
+  "format": "{icon}",
+  "tooltip": false,
+  "format-icons": {
+    "performance": " Boosted",
+    "balanced": "  Balanced",
+    "power-saver": "  Power Saver"
+  }
+},
   "idle_inhibitor": {
     "tooltip-format-activated": "Auto Lock Inactive",
     "tooltip-format-deactivated": "Auto Lock Active",
