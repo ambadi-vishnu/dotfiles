@@ -18,7 +18,7 @@
   "modules-center": [
     "hyprland/workspaces"
   ],
-"modules-right": ["hyprland/window", "group/expand","bluetooth","network","clock","custom/notification","custom/power"],
+"modules-right": ["hyprland/window", "group/expand","bluetooth","network","clock","idle_inhibitor","custom/clipboard","custom/notification","custom/power"],
 
   "hyprland/workspaces": {
     "disable-scroll": true,
@@ -234,6 +234,12 @@
     "on-click": "exec ~/resources/scripts/powermenu.sh",
     "tooltip": false
   },
+  "custom/clipboard": {
+    "format": "",
+    "on-click": "copyq show",
+    "tooltip": true,
+    "tooltip-format": "Show Clipboard"
+  },
   "custom/launcher": {
     "format": "    ",
     "on-click": "exec ~/resources/scripts/launcher.sh",
@@ -241,7 +247,7 @@
   },
   "custom/wallpaper": {
     "format": "",
-    "on-click": "exec python ~/resources/scripts/wallpaper-setter.py",
+    "on-click": "exec python ~/resources/scripts/wallpaper_setter.py",
     "tooltip-format": "Change Wallpaper"
   },
   "pulseaudio": {
@@ -295,7 +301,7 @@
                 "transition-to-left": true,
                 "click-to-reveal": true
             },
-            "modules": ["custom/expand","custom/wallpaper","backlight","pulseaudio","pulseaudio#microphone","idle_inhibitor"]
+            "modules": ["custom/expand","custom/wallpaper","backlight","pulseaudio","pulseaudio#microphone"]
         },
   "network": {
     "tooltip": true,
