@@ -241,7 +241,7 @@
   },
   "custom/wallpaper": {
     "format": "",
-    "on-click": "exec python ~/resources/scripts/wallpaper_setter.py",
+    "on-click": "exec python ~/resources/scripts/wallpaper-setter.py",
     "tooltip-format": "Change Wallpaper"
   },
   "pulseaudio": {
