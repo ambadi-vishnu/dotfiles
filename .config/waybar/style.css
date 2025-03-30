@@ -232,7 +232,7 @@ tooltip label {
 #idle_inhibitor {
     margin: 6px;
     padding: 0 4px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #8a2be2;
 }
@@ -256,7 +256,7 @@ tooltip label {
 #custom-power {
     margin-right: 20px;
     padding: 0 4px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     border-style: hidden;
     color: #cc0000;
@@ -265,7 +265,15 @@ tooltip label {
 #custom-notification {
     margin: 6px;
     padding: 0 4px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     color: #00fff9;
+}
+
+#custom-clipboard {
+    margin: 6px;
+    padding: 0 4px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFF00;
 }
