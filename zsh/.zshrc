@@ -8,7 +8,11 @@ compinit
 
 source /home/vishnu/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /home/vishnu/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/vishnu/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source <(fzf --zsh)
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 fcd() {
 cd "$(find -type d | fzf)"
