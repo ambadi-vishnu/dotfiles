@@ -43,7 +43,7 @@
 
 "hyprland/window": {
     "tooltip": false,
-    "format": "{}",
+    "format": "{initialClass}",
     "min-length": 5,
 
     "rewrite": {
@@ -63,10 +63,8 @@
         "<span size='large' foreground='#f38ba8'>󰈹 </span> LibreWolf",
 
       // Terminal
-      "/.*": "  Terminal",
-      "~.*": "  Terminal",
-      "zsh": "  Terminal",
-      "kitty": "  Terminal",
+	"(.*)kitty": 
+        "<span size='large' foreground='#FC4C02'> </span> Kitty",
 
 
       // File Manager
@@ -83,9 +81,9 @@
 
       // Development
 
-      "(.*) - VSCodium": 
+      "(.*)Codium": 
         "<span size='large' foreground='#89b4fa'> </span> VSCodium",
-      "(.*)VSCodium": 
+      "(.*)codium": 
         "<span size='large' foreground='#89b4fa'> </span> VSCodium",
 
       "(.*) - Janus": 
@@ -103,10 +101,8 @@
       "OBS(.*)": 
         "<span size='large' foreground='#a6adc8'> </span> OBS Studio",
 
-      "VLC media player": 
+      "(.*)vlc": 
         "<span size='large' foreground='#fab387'>󰕼 </span> VLC Media Player",
-      "(.*) - VLC media player": 
-        "<span size='large' foreground='#fab387'>󰕼 </span> $1",
 
       "(.*) - mpv": 
         "<span size='large' foreground='#cba6f7'> </span> $1",
@@ -121,6 +117,7 @@
       "Authenticate": "  Authenticate"
     }
   },
+
 "power-profiles-daemon": {
   "format": "{icon}",
   "tooltip": false,
