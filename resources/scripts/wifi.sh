@@ -2,7 +2,7 @@
 
 theme="$HOME/.config/rofi/wifi.rasi"
 
-notify-send -t 2000 -i /home/vishnu/.config/swaync/icons/wifi-signal.png "Wi-Fi" "Searching Networks"
+notify-send -a "WiFi" -t 2000 -i /home/vishnu/.config/swaync/icons/wifi-signal.png "Wi-Fi" "Searching Networks"
 
 # Get a list of available wifi connections and morph it into a nice-looking list
 wifi_list=$(nmcli --fields "SECURITY,SSID" device wifi list | sed 1d | sed 's/  */ /g' | sed -E "s/WPA*.?\S/ /g" | sed "s/^--/ /g" | sed "s/  //g" | sed "/--/d")
@@ -32,11 +32,11 @@ else
 	# Get saved connections
 	saved_connections=$(nmcli -g NAME connection)
 	if [[ $(echo "$saved_connections" | grep -w "$chosen_id") = "$chosen_id" ]]; then
-		nmcli connection up id "$chosen_id" | grep "successfully" && notify-send "Connection Established" "$success_message"
+		nmcli connection up id "$chosen_id" | grep "successfully" && notify-send -a "WiFi" -i /home/vishnu/.config/swaync/icons/network.png "Connection Established" "$success_message"
 	else
 		if [[ "$chosen_network" =~ "" ]]; then
 			wifi_password=$(rofi -dmenu -p "Password: " -theme ${theme})
 		fi
-		nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && notify-send "Connection Established" "$success_message"
+		nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && notify-send -a "WiFi" -i /home/vishnu/.config/swaync/icons/network.png "Connection Established" "$success_message"
     fi
 fi

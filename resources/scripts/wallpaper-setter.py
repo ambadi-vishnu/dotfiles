@@ -58,7 +58,7 @@ class MyWindow(Gtk.Window):
     def on_thumbnail_click(self, gesture, n_press, x, y, image_name):
         imagename = image_name
         command1 = f'swww img "/home/vishnu/resources/backgrounds/{imagename}"'
-        command2 = 'notify-send -t 3000 -i /home/vishnu/.config/swaync/icons/picture.png "Wallpaper Selected" "Updating Selected Wallpaper"'
+        command2 = f'notify-send -t 3000 -i /home/vishnu/.config/swaync/icons/picture.png -a "Wallpaper Selector" "Wallpaper Updated" "{imagename}"'
         subprocess.run(command1, shell=True)
         subprocess.run(command2, shell=True)
         print(f"Image {imagename} clicked and commands executed.")

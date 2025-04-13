@@ -6,7 +6,7 @@ sudo pacman -S --needed --noconfirm polkit-gnome || { echo "$(date '+%A %d %B %Y
 sudo pacman -S --needed --noconfirm kitty || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package kitty" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm kitty-shell-integration || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package kitty-shell-integration" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm kitty-terminfo || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package kitty-terminfo" >> ~/install-log.txt; exit 1; }
-sudo pacman -S --needed --noconfirm copyq || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package copyq" >> ~/install-log.txt; exit 1; }
+sudo pacman -S --needed --noconfirm cliphist || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package cliphist" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm wl-clipboard || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package wl-clipboard" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm wtype || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package wtype" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm rofi-emoji || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package rofi-emoji" >> ~/install-log.txt; exit 1; }

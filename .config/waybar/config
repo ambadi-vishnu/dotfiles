@@ -117,7 +117,6 @@
       "Authenticate": "  Authenticate"
     }
   },
-
 "power-profiles-daemon": {
   "format": "{icon}",
   "tooltip": false,
@@ -233,7 +232,7 @@
   },
   "custom/clipboard": {
     "format": "",
-    "on-click": "copyq show",
+    "on-click": "exec ~/resources/scripts/cliphist.sh",
     "tooltip": true,
     "tooltip-format": "Show Clipboard"
   },
@@ -244,7 +243,7 @@
   },
   "custom/wallpaper": {
     "format": "",
-    "on-click": "exec python ~/resources/scripts/wallpaper_setter.py",
+    "on-click": "exec python ~/resources/scripts/wallpaper-setter.py",
     "tooltip-format": "Change Wallpaper"
   },
   "pulseaudio": {
@@ -284,7 +283,7 @@
     "on-click-right": "pavucontrol -t 4",
     "on-scroll-up": "~/resources/scripts/volume.sh --mic-inc",
     "on-scroll-down": "~/resources/scripts/volume.sh --mic-dec",
-    "tooltip-format": "Mic Volume: {volume}%",
+    "tooltip-format": "Mic Volume: {source_volume}%",
     "scroll-step": 5
   },
 "custom/expand": {

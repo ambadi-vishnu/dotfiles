@@ -7,8 +7,8 @@ from unidecode import unidecode
 import jinja2
 
 # API keys
-owm_api_key = "xxxxxxxxxxxxxxxxxxxxxxxxx"  # Replace with your actual OpenWeatherMap API key
-ip2l_api_key = "xxxxxxxxxxxxxxxxxxxxxxxx"  # Replace with your actual ip2location.io API key
+owm_api_key = "xxxxxxxx"  # Replace with your actual OpenWeatherMap API key
+ip2l_api_key = "xxxxxxxx"  # Replace with your actual ip2location.io API key
 
 icons = {
     # clear
