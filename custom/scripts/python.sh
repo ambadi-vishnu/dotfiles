@@ -25,4 +25,6 @@ sudo pacman -S --needed --noconfirm python-tqdm || { echo "$(date '+%A %d %B %Y 
 sudo pacman -S --needed --noconfirm python-unidecode || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package python-unidecode" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm python-urllib3 || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package python-urllib3" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm python-wheel || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package python-wheel" >> ~/install-log.txt; exit 1; }
+sudo pacman -S --needed --noconfirm python-pyudev || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package python-pyudev" >> ~/install-log.txt; exit 1; }
+sudo pacman -S --needed --noconfirm python-pydbus || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package python-pydbus" >> ~/install-log.txt; exit 1; }
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Installed Python & Necessary Libraries..." >> ~/install-log.txt

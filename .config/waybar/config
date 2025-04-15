@@ -13,13 +13,23 @@
     "cpu",
     "temperature",
     "memory",
-    "power-profiles-daemon",
+    "power-profiles-daemon"
   ],
   "modules-center": [
     "hyprland/workspaces"
   ],
-"modules-right": ["hyprland/window", "group/expand","bluetooth","network","clock","idle_inhibitor","custom/clipboard","custom/notification","custom/power"],
-
+  "modules-right": [
+    "hyprland/window",
+    "group/expand",
+    "bluetooth",
+    "network",
+    "clock",
+    "idle_inhibitor",
+    "custom/usb",
+    "custom/clipboard",
+    "custom/notification",
+    "custom/power"
+  ],
   "hyprland/workspaces": {
     "disable-scroll": true,
     "on-click": "activate",
@@ -40,92 +50,52 @@
       "persistent": "󰊠"
     }
   },
-
-"hyprland/window": {
+  "hyprland/window": {
     "tooltip": false,
     "format": "{initialClass}",
     "min-length": 5,
-
     "rewrite": {
       // Desktop
-      "": 
-        "<span size='large' foreground='#89b4fa'> </span> Hyprland",
-
-
-      "tmux(.*)": 
-        "<span size='large' foreground='#a6e3a1'> </span> Tmux",
-
+      "": "<span size='large' foreground='#89b4fa'> </span> Hyprland",
+      "tmux(.*)": "<span size='large' foreground='#a6e3a1'> </span> Tmux",
       // Browser
-
-      "(.*)LibreWolf": 
-        "<span size='large' foreground='#f38ba8'>󰈹 </span> LibreWolf",
-      "(.*) — LibreWolf": 
-        "<span size='large' foreground='#f38ba8'>󰈹 </span> LibreWolf",
-
+      "(.*)LibreWolf": "<span size='large' foreground='#f38ba8'>󰈹 </span> LibreWolf",
+      "(.*) — LibreWolf": "<span size='large' foreground='#f38ba8'>󰈹 </span> LibreWolf",
       // Terminal
-	"(.*)kitty": 
-        "<span size='large' foreground='#FC4C02'> </span> Kitty",
-
-
+      "(.*)kitty": "<span size='large' foreground='#FC4C02'> </span> Kitty",
       // File Manager
-
-      "(.*)Thunar": 
-        "<span size='large' foreground='#FC4C02'>󰉋 </span> Thunar",
-      "(.*) — Thunar": 
-        "<span size='large' foreground='#FC4C02'>󰉋 </span> Thunar",
-
-      "(.*)Dolphin": 
-        "<span size='large' foreground='#008E97'>󱢴 </span> Dolphin",
-      "(.*) — Dolphin": 
-        "<span size='large' foreground='#008E97'>󱢴 </span> Dolphin",
-
+      "(.*)Thunar": "<span size='large' foreground='#FC4C02'>󰉋 </span> Thunar",
+      "(.*) — Thunar": "<span size='large' foreground='#FC4C02'>󰉋 </span> Thunar",
+      "(.*)Dolphin": "<span size='large' foreground='#008E97'>󱢴 </span> Dolphin",
+      "(.*) — Dolphin": "<span size='large' foreground='#008E97'>󱢴 </span> Dolphin",
       // Development
-
-      "(.*)Codium": 
-        "<span size='large' foreground='#89b4fa'> </span> VSCodium",
-      "(.*)codium": 
-        "<span size='large' foreground='#89b4fa'> </span> VSCodium",
-
-      "(.*) - Janus": 
-        "<span size='large' foreground='#89b4fa'>󱩼 </span>Janus: $1",
-      "(.*)Janus": 
-        "<span size='large' foreground='#89b4fa'>󱩼 </span> Janus",
-
+      "(.*)Codium": "<span size='large' foreground='#89b4fa'> </span> VSCodium",
+      "(.*)codium": "<span size='large' foreground='#89b4fa'> </span> VSCodium",
+      "(.*) - Janus": "<span size='large' foreground='#89b4fa'>󱩼 </span>Janus: $1",
+      "(.*)Janus": "<span size='large' foreground='#89b4fa'>󱩼 </span> Janus",
       // Media
-
-      "(.*)Spotify": 
-        "<span size='large' foreground='#a6e3a1'> </span> Spotify",
-      "(.*)Spotify Premium": 
-        "<span size='large' foreground='#a6e3a1'> </span> Spotify Premium",
-
-      "OBS(.*)": 
-        "<span size='large' foreground='#a6adc8'> </span> OBS Studio",
-
-      "(.*)vlc": 
-        "<span size='large' foreground='#fab387'>󰕼 </span> VLC Media Player",
-
-      "(.*) - mpv": 
-        "<span size='large' foreground='#cba6f7'> </span> $1",
-
+      "(.*)Spotify": "<span size='large' foreground='#a6e3a1'> </span> Spotify",
+      "(.*)Spotify Premium": "<span size='large' foreground='#a6e3a1'> </span> Spotify Premium",
+      "OBS(.*)": "<span size='large' foreground='#a6adc8'> </span> OBS Studio",
+      "(.*)vlc": "<span size='large' foreground='#fab387'>󰕼 </span> VLC Media Player",
+      "(.*) - mpv": "<span size='large' foreground='#cba6f7'> </span> $1",
       "qView": "  qView",
-
       "(.*).jpg": "  $1.jpg",
       "(.*).png": "  $1.png",
       "(.*).svg": "  $1.svg",
-
       // System
       "Authenticate": "  Authenticate"
     }
   },
-"power-profiles-daemon": {
-  "format": "{icon}",
-  "tooltip": false,
-  "format-icons": {
-    "performance": " Boosted",
-    "balanced": "  Balanced",
-    "power-saver": "  Power Saver"
-  }
-},
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip": false,
+    "format-icons": {
+      "performance": " Boosted",
+      "balanced": "  Balanced",
+      "power-saver": "  Power Saver"
+    }
+  },
   "idle_inhibitor": {
     "tooltip-format-activated": "Auto Lock Inactive",
     "tooltip-format-deactivated": "Auto Lock Active",
@@ -286,19 +256,25 @@
     "tooltip-format": "Mic Volume: {source_volume}%",
     "scroll-step": 5
   },
-"custom/expand": {
-            "format": "",
-            "tooltip": false
-        },
-        "group/expand": {
-            "orientation": "horizontal",
-            "drawer": {
-                "transition-duration": 600,
-                "transition-to-left": true,
-                "click-to-reveal": true
-            },
-            "modules": ["custom/expand","custom/wallpaper","backlight","pulseaudio","pulseaudio#microphone"]
-        },
+  "custom/expand": {
+    "format": "",
+    "tooltip": false
+  },
+  "group/expand": {
+    "orientation": "horizontal",
+    "drawer": {
+      "transition-duration": 600,
+      "transition-to-left": true,
+      "click-to-reveal": true
+    },
+    "modules": [
+      "custom/expand",
+      "custom/wallpaper",
+      "backlight",
+      "pulseaudio",
+      "pulseaudio#microphone"
+    ]
+  },
   "network": {
     "tooltip": true,
     "format-wifi": "",
@@ -314,7 +290,7 @@
     "tooltip": true,
     "rotate": 0,
     "format-disabled": "󰂲",
-"format-off": "󰂲",
+    "format-off": "󰂲",
     "format-on": "󰂯",
     "format-connected": "󰂯",
     "format-connected-battery": "󰂯",
@@ -331,6 +307,14 @@
     "exec": "~/resources/scripts/weather-waybar-module.sh",
     "exec-if": "ping openweathermap.org -c1",
     "signal": 8
+  },
+  "custom/usb": {
+    "exec": "cat /tmp/usb_icon.json",
+    "return-type": "json",
+    "interval": 1,
+    "format": "{text}",
+    "on-click": "bash -c 'jq -r .onclick /tmp/usb_icon.json | xargs -I {} sh -c {}'",
+    "on-click-right": "bash -c 'jq -r .onclickright /tmp/usb_icon.json | xargs -I {} sh -c {}'"
   },
   "custom/notification": {
     "tooltip": false,

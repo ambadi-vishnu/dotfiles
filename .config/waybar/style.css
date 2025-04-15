@@ -1,20 +1,20 @@
 /* Bar/Workspace */
 * {
-    border: none;
-    font-family: "FiraCode Nerd Font";
-    font-feature-settings: "zero";
-    font-size: 15px;
-    min-height: 10px;
+  border: none;
+  font-family: "FiraCode Nerd Font";
+  font-feature-settings: "zero";
+  font-size: 15px;
+  min-height: 10px;
 }
 
 window#waybar {
-    background: rgba(43, 48, 59, 0);
-    margin-top: 6px;
-    border-radius: 5px;
+  background: rgba(43, 48, 59, 0);
+  margin-top: 6px;
+  border-radius: 5px;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 tooltip {
@@ -24,6 +24,7 @@ tooltip {
   border-radius: 5px;
   border-color: #00afb1;
 }
+
 tooltip label {
   color: #c9c7cd;
   font-weight: bold;
@@ -31,249 +32,257 @@ tooltip label {
 }
 
 #window {
-    background: transparent;
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #c9c7cd;
+  background: transparent;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #c9c7cd;
 }
 
 #workspaces {
-    margin: 6px;
-    border-radius: 5px;
-    background: rgba(43, 48, 59, 0);
-    transition: none;
-    padding: 0 6px 0 6px;
+  margin: 6px;
+  border-radius: 5px;
+  background: rgba(43, 48, 59, 0);
+  transition: none;
+  padding: 0 6px 0 6px;
 }
 
 #workspaces button {
-    transition: none;
-    color: #85b5ba;
-    background: transparent;
-    margin-right: 10px;
+  transition: none;
+  color: #85b5ba;
+  background: transparent;
+  margin-right: 10px;
 }
 
 #workspaces button:hover {
-    box-shadow: inherit;
-    text-shadow: inherit;
+  box-shadow: inherit;
+  text-shadow: inherit;
 }
 
 #workspaces button.persistent {
-    transition: none;
-    color: #aca1cf;
-    background: transparent;
-    font-size: 4px;
+  transition: none;
+  color: #aca1cf;
+  background: transparent;
+  font-size: 4px;
 }
 
 #workspaces button.empty {
-    color: #e29eca;
-    font-size: 2px;
-    transition: none;
-    background: transparent;
+  color: #e29eca;
+  font-size: 2px;
+  transition: none;
+  background: transparent;
 }
 
 #workspaces button.active {
-    transition: none;
-    color: #e6b99d;
-    background: transparent;
-    font-size: 4px;
+  transition: none;
+  color: #e6b99d;
+  background: transparent;
+  font-size: 4px;
 }
 
 /* Modules */
 #group-expand {
-    padding: 0px 5px;
-    transition: all .3s ease;
+  padding: 0px 5px;
+  transition: all .3s ease;
 }
 
 #custom-expand {
-    padding: 0px 5px;
-    color: #e6b99d;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
-    transition: all .3s ease;
+  padding: 0px 5px;
+  color: #e6b99d;
+  text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
+  transition: all .3s ease;
 }
 
 #custom-expand:hover {
-    color: rgba(255, 255, 255, .2);
-    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+  color: rgba(255, 255, 255, .2);
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
 }
 
 #custom-launcher {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 20px;
-    background-image: url('/home/vishnu/.config/waybar/arch-logo.svg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    border-style: hidden;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 20px;
+  background-image: url('/home/vishnu/.config/waybar/arch-logo.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-style: hidden;
 }
 
 #bluetooth {
-    color: #0687db;
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 20px;
-    font-weight: bold;
+  color: #0687db;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #custom-weather {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #c9c7cd;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #c9c7cd;
 }
 
 #clock {
-    color: #c9c7cd;
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
+  color: #c9c7cd;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 #power-profiles-daemon {
-    color: #c9c7cd;
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
+  color: #c9c7cd;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 #battery {
-    color: #90B99F;
-    outline-style: none;
-    background: none;
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
+  color: #90B99F;
+  outline-style: none;
+  background: none;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #11a01d;
-    outline-style: none;
-    background: none;
+  color: #11a01d;
+  outline-style: none;
+  background: none;
 }
 
 #battery.warning:not(.charging) {
-    color: #FFFF00;
-    outline-style: none;
-    background: none;
+  color: #FFFF00;
+  outline-style: none;
+  background: none;
 }
 
 #battery.critical:not(.charging) {
-    color: #FF0000;
-    background: none;
-    outline-style: none;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  color: #FF0000;
+  background: none;
+  outline-style: none;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 @keyframes blink {
-    to {
-        color: #FF0000;
-    }
+  to {
+    color: #FF0000;
+  }
 }
 
 #backlight {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #FFFF00;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FFFF00;
 }
 
 #cpu {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #a8bba1;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #a8bba1;
 }
 
 #memory {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #00fff9;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #00fff9;
 }
 
 #network {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #f50989;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f50989;
 }
 
 #pulseaudio {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #fa9da9;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fa9da9;
 }
 
 #temperature {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #f4c3a1;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f4c3a1;
 }
 
 #idle_inhibitor {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #8a2be2;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #8a2be2;
 }
 
 #disk {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #e76f51;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #e76f51;
 }
 
 #custom-wallpaper {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 14px;
-    font-weight: bold;
-    color: #ff0000;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff0000;
 }
 
 #custom-power {
-    margin-right: 20px;
-    padding: 0 4px;
-    font-size: 16px;
-    font-weight: bold;
-    border-style: hidden;
-    color: #cc0000;
+  margin-right: 20px;
+  padding: 0 4px;
+  font-size: 16px;
+  font-weight: bold;
+  border-style: hidden;
+  color: #cc0000;
 }
 
 #custom-notification {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #00fff9;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #00fff9;
 }
 
 #custom-clipboard {
-    margin: 6px;
-    padding: 0 4px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #FFFF00;
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFFF00;
+}
+
+#custom-usb {
+  margin: 6px;
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ff3399;
 }
