@@ -8,7 +8,7 @@ gi.require_version("Gtk", "4.0")
 
 class MyWindow(Gtk.Window):
     def __init__(self):
-        super().__init__(title="Image Thumbnails")
+        super().__init__(title="Wallpaper-Selector")
         self.set_default_size(800, 600)
         self.connect("destroy", self.on_destroy)
 
@@ -101,7 +101,7 @@ class MyWindow(Gtk.Window):
         return thumbnail
 
 def main():
-    app = Gtk.Application(application_id='com.example.GtkApplication')
+    app = Gtk.Application(application_id='Wallpaper.Selector.Script')
     app.connect("activate", on_activate)
     app.run(None)
 

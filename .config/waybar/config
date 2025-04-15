@@ -79,6 +79,7 @@
       "OBS(.*)": "<span size='large' foreground='#a6adc8'> </span> OBS Studio",
       "(.*)vlc": "<span size='large' foreground='#fab387'>󰕼 </span> VLC Media Player",
       "(.*) - mpv": "<span size='large' foreground='#cba6f7'> </span> $1",
+      "(.*)Wallpaper.Selector.Script": "<span size='large' foreground='#FC4C02'> </span> Wallpaper Selector",
       "qView": "  qView",
       "(.*).jpg": "  $1.jpg",
       "(.*).png": "  $1.png",
