@@ -1,9 +1,10 @@
 import gi
 import os
 import subprocess
+from concurrent.futures import ThreadPoolExecutor
+from gi.repository import Gtk, Gio, Gdk, GdkPixbuf, GLib  # Import GLib for idle_add
 
 gi.require_version("Gtk", "4.0")
-from gi.repository import Gtk, Gio, Gdk, GdkPixbuf
 
 class MyWindow(Gtk.Window):
     def __init__(self):
@@ -27,37 +28,48 @@ class MyWindow(Gtk.Window):
         self.flowbox.set_selection_mode(Gtk.SelectionMode.NONE)
         scrolled_window.set_child(self.flowbox)
 
-        # Load thumbnails
-        self.load_thumbnails("/home/vishnu/resources/backgrounds")
+        # Initialize the ThreadPoolExecutor for async thumbnail loading
+        self.executor = ThreadPoolExecutor(max_workers=4)
+        self.load_thumbnails_async("/home/vishnu/resources/backgrounds")
 
     def on_destroy(self, window):
         app = self.get_application()
         if app:
             app.quit()
 
-    def load_thumbnails(self, folder_path):
+    def load_thumbnails_async(self, folder_path):
         images = [f for f in os.listdir(folder_path) if f.endswith(('.jpg', '.jpeg', '.png'))]
         thumbnail_width = 250
         thumbnail_height = 140
+
+        # Load thumbnails in the background (asynchronously)
         for image in images:
-            try:
-                image_path = os.path.join(folder_path, image)
-                thumbnail = self.create_thumbnail(image_path, thumbnail_width, thumbnail_height)
-                image_widget = Gtk.Picture.new_for_paintable(Gdk.Texture.new_for_pixbuf(thumbnail))
-                image_widget.set_size_request(thumbnail_width, thumbnail_height)
-                image_widget.set_margin_start(10)
-                image_widget.set_margin_end(10)
-                image_widget.set_margin_top(10)
-                image_widget.set_margin_bottom(10)
+            self.executor.submit(self.create_thumbnail_and_add_to_flowbox, folder_path, image, thumbnail_width, thumbnail_height)
 
-                # Create a click gesture and connect it to the callback
-                click_gesture = Gtk.GestureClick.new()
-                click_gesture.connect("pressed", self.on_thumbnail_click, image)
-                image_widget.add_controller(click_gesture)
+    def create_thumbnail_and_add_to_flowbox(self, folder_path, image_name, width, height):
+        try:
+            image_path = os.path.join(folder_path, image_name)
+            thumbnail = self.create_thumbnail(image_path, width, height)
 
-                self.flowbox.insert(image_widget, -1)
-            except Exception as e:
-                print(f"Error Loading Image {image}: {e}")
+            # Schedule the UI update on the main thread using GLib.idle_add
+            GLib.idle_add(self.add_image_to_flowbox, thumbnail, image_name, width, height)
+        except Exception as e:
+            print(f"Error loading image {image_name}: {e}")
+
+    def add_image_to_flowbox(self, thumbnail, image_name, width, height):
+        image_widget = Gtk.Picture.new_for_pixbuf(thumbnail)
+        image_widget.set_size_request(width, height)
+        image_widget.set_margin_start(10)
+        image_widget.set_margin_end(10)
+        image_widget.set_margin_top(10)
+        image_widget.set_margin_bottom(10)
+
+        # Create a click gesture and connect it to the callback
+        click_gesture = Gtk.GestureClick.new()
+        click_gesture.connect("pressed", self.on_thumbnail_click, image_name)
+        image_widget.add_controller(click_gesture)
+
+        self.flowbox.insert(image_widget, -1)
 
     def on_thumbnail_click(self, gesture, n_press, x, y, image_name):
         imagename = image_name
