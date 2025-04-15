@@ -150,24 +150,28 @@ tooltip label {
   padding: 0 4px;
   font-size: 14px;
   font-weight: bold;
+  box-shadow: none;
 }
 
 #battery.charging,
 #battery.plugged {
   color: #11a01d;
   outline-style: none;
+  box-shadow: none;
   background: none;
 }
 
 #battery.warning:not(.charging) {
   color: #FFFF00;
   outline-style: none;
+  box-shadow: none;
   background: none;
 }
 
 #battery.critical:not(.charging) {
   color: #FF0000;
   background: none;
+  box-shadow: none;
   outline-style: none;
   animation-name: blink;
   animation-duration: 0.5s;
