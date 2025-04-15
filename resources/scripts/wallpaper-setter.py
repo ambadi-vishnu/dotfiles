@@ -27,6 +27,7 @@ class MyWindow(Gtk.Window):
         self.flowbox.set_selection_mode(Gtk.SelectionMode.NONE)
         scrolled_window.set_child(self.flowbox)
 
+        # Load thumbnails
         self.load_thumbnails("/home/vishnu/resources/backgrounds")
 
     def on_destroy(self, window):
@@ -39,21 +40,24 @@ class MyWindow(Gtk.Window):
         thumbnail_width = 250
         thumbnail_height = 140
         for image in images:
-            image_path = os.path.join(folder_path, image)
-            thumbnail = self.create_thumbnail(image_path, thumbnail_width, thumbnail_height)
-            image_widget = Gtk.Picture.new_for_paintable(Gdk.Texture.new_for_pixbuf(thumbnail))
-            image_widget.set_size_request(thumbnail_width, thumbnail_height)
-            image_widget.set_margin_start(10)
-            image_widget.set_margin_end(10)
-            image_widget.set_margin_top(10)
-            image_widget.set_margin_bottom(10)
+            try:
+                image_path = os.path.join(folder_path, image)
+                thumbnail = self.create_thumbnail(image_path, thumbnail_width, thumbnail_height)
+                image_widget = Gtk.Picture.new_for_paintable(Gdk.Texture.new_for_pixbuf(thumbnail))
+                image_widget.set_size_request(thumbnail_width, thumbnail_height)
+                image_widget.set_margin_start(10)
+                image_widget.set_margin_end(10)
+                image_widget.set_margin_top(10)
+                image_widget.set_margin_bottom(10)
 
-            # Create a click gesture and connect it to the callback
-            click_gesture = Gtk.GestureClick.new()
-            click_gesture.connect("pressed", self.on_thumbnail_click, image)
-            image_widget.add_controller(click_gesture)
+                # Create a click gesture and connect it to the callback
+                click_gesture = Gtk.GestureClick.new()
+                click_gesture.connect("pressed", self.on_thumbnail_click, image)
+                image_widget.add_controller(click_gesture)
 
-            self.flowbox.insert(image_widget, -1)
+                self.flowbox.insert(image_widget, -1)
+            except Exception as e:
+                print(f"Error Loading Image {image}: {e}")
 
     def on_thumbnail_click(self, gesture, n_press, x, y, image_name):
         imagename = image_name
