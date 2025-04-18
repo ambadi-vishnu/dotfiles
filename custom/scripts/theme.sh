@@ -23,3 +23,8 @@ echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Symlink Created For Assets Dir
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Copying gtk-4.0 Directory To .config Directory..." >> ~/install-log.txt
 cp -rf ~/.themes/Dracula/gtk-4.0 "$HOME/.config/" || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Copying gtk-4.0 Directory To .config Directory" >> ~/install-log.txt; exit 1; }
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: gtk-4.0 Directory Copied To .config Directory" >> ~/install-log.txt
+
+#Copy gtkrc-2.0 To Home Directory
+echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Copying gtkrc-2.0 To Home Directory..." >> ~/install-log.txt
+cp -rf ~/temp/dotfiles/custom/files/.gtkrc-2.0 "$HOME/" || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Copying gtkrc-2.0 To Home Directory" >> ~/install-log.txt; exit 1; }
+echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: File gtkrc-2.0 Copied To Home Directory" >> ~/install-log.txt
