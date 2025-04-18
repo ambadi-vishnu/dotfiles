@@ -2,7 +2,7 @@
 
 #Install Rate-Mirrors
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Installing Rate-Mirrors..." >> ~/install-log.txt
-yay -S rate-mirrors --noconfirm || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package rate-mirrors" >> ~/install-log.txt; exit 1; }
+yay -S rate-mirrors-bin --noconfirm || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package rate-mirrors" >> ~/install-log.txt; exit 1; }
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Rate-Mirrors Installed" >> ~/install-log.txt
 
 #Update Pacman Mirrorlist
