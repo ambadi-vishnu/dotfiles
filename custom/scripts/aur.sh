@@ -10,4 +10,5 @@ yay -S --needed --noconfirm swww-git || { echo "$(date '+%A %d %B %Y | %I:%M %p'
 yay -S --needed --noconfirm blueberry-wayland || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package blueberry-wayland" >> ~/install-log.txt; exit 1; }
 yay -S --needed --noconfirm janus || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package janus" >> ~/install-log.txt; exit 1; }
 yay -S --needed --noconfirm brightnessctl-git || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package brightnessctl-git" >> ~/install-log.txt; exit 1; }
+yay -S --needed --noconfirm vscodium || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package vscodium" >> ~/install-log.txt; exit 1; }
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Necessary Applications Installed - Yay" >> ~/install-log.txt
