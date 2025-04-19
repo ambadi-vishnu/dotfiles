@@ -9,3 +9,6 @@ echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Rate-Mirrors Installed" >> ~/i
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Updating Pacman Mirrorlist..." >> ~/install-log.txt
 rate-mirrors --protocol https arch | sudo tee /etc/pacman.d/mirrorlist || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Updating Mirrorlist" >> ~/install-log.txt; exit 1; }
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Pacman Mirrorlist Updated" >> ~/install-log.txt
+
+#Delay 10s
+sleep 10
