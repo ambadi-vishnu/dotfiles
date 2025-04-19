@@ -175,14 +175,17 @@ tooltip label {
   outline-style: none;
   animation-name: blink;
   animation-duration: 0.5s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
 
 @keyframes blink {
-  to {
+  0% {
     color: #FF0000;
+  }
+  100% {
+    color: #b30000;
   }
 }
 
