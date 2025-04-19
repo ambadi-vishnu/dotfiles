@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Syncing Package Database - Pacman..." >> ~/install-log.txt
+sudo pacman -Syy || echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Syncing Package Database" >> ~/install-log.txt
+echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Finished Syncing Package Database - Pacman" >> ~/install-log.txt
+
 #Installing Necessary Apps - Pacman
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Installing Necessary Applications - Pacman..." >> ~/install-log.txt
 sudo pacman -S --needed --noconfirm polkit-gnome || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package polkit-gnome" >> ~/install-log.txt; exit 1; }
