@@ -28,7 +28,7 @@
     "break",
     {
       "key": "     OS           ",
-      "keyColor": "green",
+      "keyColor": "red",
       "type": "os"
     },
     {
@@ -48,7 +48,7 @@
     },
     {
       "key": "    󰻠 CPU          ",
-      "keyColor": "cyan",
+      "keyColor": "yellow",
       "type": "cpu"
     },
     {
@@ -58,43 +58,44 @@
     },
     {
       "key": "    󰑭 Memory       ",
-      "keyColor": "green",
+      "keyColor": "magenta",
       "type": "memory"
     },
     {
       "key": "     Disk         ",
-      "keyColor": "cyan",
+      "keyColor": "red",
       "type": "disk"
     },
     {
-      "key": "     Swap         ",
-      "keyColor": "blue",
-      "type": "swap"
+      "key": "    󱦟 OS Age       ",
+      "type": "command",
+      "keyColor": "cyan",
+      "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
     },
     {
-      "key": "     Display      ",
-      "keyColor": "green",
+      "key": "      Display     ",
+      "keyColor": "blue",
       "type": "display"
     },
     {
-      "key": "     WM           ",
-      "keyColor": "cyan",
+      "key": "      WM          ",
+      "keyColor": "green",
       "type": "wm"
     },   
     {
-      "key": "     WiFi         ",
-      "keyColor": "blue",
+      "key": "      WiFi        ",
+      "keyColor": "yellow",
       "type": "wifi"
     },
     {
-      "key": "     Battery      ",
-      "keyColor": "green",
+      "key": "      Battery     ",
+      "keyColor": "magenta",
       "type": "battery",
       "compact": true
     },
     {
       "key": "    󰅐 Uptime       ",
-      "keyColor": "cyan",
+      "keyColor": "red",
       "type": "uptime"
     },
     "break",
