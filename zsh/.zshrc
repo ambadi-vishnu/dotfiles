@@ -1,8 +1,17 @@
 
-HISTFILE=~/.zsh-history
+setopt HIST_IGNORE_ALL_DUPS   # Ignore all duplicate commands
+setopt HIST_IGNORE_SPACE      # Don’t record commands with a leading space
+setopt HIST_IGNORE_DUPS       # Ignore consecutive duplicate commands
+setopt APPEND_HISTORY         # Append new history lines rather than overwriting the file
+setopt SHARE_HISTORY          # Share history between multiple sessions
+setopt INC_APPEND_HISTORY     # Incrementally append commands as they are typed
+setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks from commands
+
+HISTFILE="$HOME/.zsh-history"
 HISTSIZE=10000
 SAVEHIST=10000
-zstyle :compinstall filename '/home/vishnu/.zshrc'
+
+zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 
