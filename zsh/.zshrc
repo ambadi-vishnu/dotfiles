@@ -1,15 +1,6 @@
-
-setopt HIST_IGNORE_ALL_DUPS   # Ignore all duplicate commands
-setopt HIST_IGNORE_SPACE      # Don’t record commands with a leading space
-setopt HIST_IGNORE_DUPS       # Ignore consecutive duplicate commands
-setopt APPEND_HISTORY         # Append new history lines rather than overwriting the file
-setopt SHARE_HISTORY          # Share history between multiple sessions
-setopt INC_APPEND_HISTORY     # Incrementally append commands as they are typed
-setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks from commands
-
 HISTFILE="$HOME/.zsh-history"
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=5000
+SAVEHIST=5000
 
 zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
@@ -35,6 +26,11 @@ getpath() {
 echo $(find -type f | fzf | sed 's/^..//' | tr -d '\n') | wl-copy
 }
 
+function clean_history {
+    awk '!seen[$0]++' "$HISTFILE" > "$HISTFILE.tmp" && mv "$HISTFILE.tmp" "$HISTFILE"
+}
+
+trap clean_history EXIT
 
 PROMPT=$'%{\e[0;34m%}%B┌─[%b%{\e[1;32m%}%n%{\e[1;37m%}@%{\e[1;37m%}%{\e[1;31m%}%m%{\e[0;34m%}%B]%b%{\e[0m%} - %b%{\e[0;34m%}%B[%b%{\e[1;38;5;214m%}%~%{\e[0;34m%}%B]%b%{\e[0m%} - %{\e[0;34m%}%B[%b%{\e[38;5;214m%}'%D{"%a %b %d, %I:%M %p"}%b$'%{\e[0;34m%}%B]%b%{\e[0m%}
 %{\e[0;34m%}%B└─%B[%{\e[1;35m%}$%{\e[0;34m%}%B]%{\e[0m%} '
