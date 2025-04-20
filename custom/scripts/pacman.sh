@@ -13,10 +13,10 @@ sudo pacman -S --needed --noconfirm kitty-terminfo || { echo "$(date '+%A %d %B 
 sudo pacman -S --needed --noconfirm cliphist || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package cliphist" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm wl-clipboard || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package wl-clipboard" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm wtype || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package wtype" >> ~/install-log.txt; exit 1; }
-sudo pacman -S --needed --noconfirm rofi-emoji || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package rofi-emoji" >> ~/install-log.txt; exit 1; }
+sudo pacman -S --needed --noconfirm rofi-wayland || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package rofi-wayland" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm zsh || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package zsh" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm fzf || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package fzf" >> ~/install-log.txt; exit 1; }
-sudo pacman -S --needed --noconfirm rofi-wayland || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package rofi-wayland" >> ~/install-log.txt; exit 1; }
+sudo pacman -S --needed --noconfirm rofi-emoji || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package rofi-emoji" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm swaync || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package swaync" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm loupe || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package loupe" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm fastfetch || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package fastfetch" >> ~/install-log.txt; exit 1; }
