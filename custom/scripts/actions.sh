@@ -19,3 +19,8 @@ echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Font Cache Updated" >> ~/insta
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Activating Bluetooth Service..." >> ~/install-log.txt
 sudo systemctl enable bluetooth.service || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Enabling bluetooth.service" >> ~/install-log.txt; exit 1; }
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Success:  Bluetooth Service Activated" >> ~/install-log.txt
+
+#Activate Power Profiles Daemon
+echo "$(date '+%A %d %B %Y | %I:%M %p'): Action: Activating Power Profiles Daemon Service..." >> ~/install-log.txt
+sudo systemctl enable power-profiles-daemon.service || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Enabling power-profiles-daemon.service" >> ~/install-log.txt; exit 1; }
+echo "$(date '+%A %d %B %Y | %I:%M %p'): Success:  Power Profiles Daemon Service Activated" >> ~/install-log.txt

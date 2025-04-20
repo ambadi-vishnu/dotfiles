@@ -33,4 +33,5 @@ sudo pacman -S --needed --noconfirm tela-circle-icon-theme-dracula || { echo "$(
 sudo pacman -S --needed --noconfirm udiskie || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package udiskie" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm jq || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package jq" >> ~/install-log.txt; exit 1; }
 sudo pacman -S --needed --noconfirm wf-recorder || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package wf-recorder" >> ~/install-log.txt; exit 1; }
+sudo pacman -S --needed --noconfirm power-profiles-daemon || { echo "$(date '+%A %d %B %Y | %I:%M %p'): Error: Failed Installing Package power-profiles-daemon" >> ~/install-log.txt; exit 1; }
 echo "$(date '+%A %d %B %Y | %I:%M %p'): Success: Necessary Applications Installed - Pacman" >> ~/install-log.txt
